@@ -1,0 +1,268 @@
+<HTML>
+
+<!-- Background Settings and Title -->
+
+<head>
+
+	<style>
+		body {
+			background-image: url("GymBackground2.jpg");
+			background-size: 1400px 650px;
+			background-repeat: no-repeat;
+		}
+	</style>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+		
+		<link rel="stylesheet" href="gym.css">
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+		crossorigin="anonymous"></script>
+
+	<script src="MyGymPlannerFunctions.js"></script>
+
+	
+</head>
+
+<body>
+
+	<Center>
+		<font color="black">
+			<font size="50">
+				<B><U><I> My Gym Planner </I></U></B>
+			</font>
+
+			<!-- Filter Dropdown Menu and Button -->
+
+			<div id="DropD" style="position:absolute;top:130;left:1000">
+				<select name="Filter">
+					<option value="Select Muscle Group" selected>Select Muscle Group</option>
+					<option value="Chest">Chest</option>
+					<option value="Triceps">Tricep</option>
+				</select>
+			</div>
+
+			<button class="Filter"> Filter </button>
+			
+
+			<!-- Shared Plans Button -->
+
+			<button class="button SharedPlans"> Shared Plans </button>
+			
+			<!-- Save Plans Button -->
+
+			<button class="SavePlan"> Save Current Plan </button>
+
+				<!-- Favourites Button -->
+
+			<span style="position:absolute;top:20px;left:1160;border-radius:25px">
+				<button class="button Favoutires"><img src="FavouritesButton.jpg">
+				</button>
+			</span>
+			
+			<div>
+
+				<!-- Add Button -->
+
+				<button onclick="AddExercise()" class="AddPlan"> Add New Exercise </button>
+
+				<!-- Adding a New Record Form -->
+
+				<form id="AddForm" style="display: none;z-index:1" action="localhost:8080" method="Post"
+					onsubmit="return checkValues1()" onsubmit="return postData(this)">
+
+					<BR>
+
+					<B><U><I> Add New Exercise </I></U></B>
+					<input type="button" name="close" value="x" onclick="CloseMenu()" style="position:absolute;top:10px;left:235px;border-radius:25px">
+				
+					<BR><BR>
+
+					<input type="radio" name="update" value="Monday"> Monday
+
+					<input type="radio" name="update" value="Tuesday"> Tuesday
+
+					<input type="radio" name="update" value="Wednesday"> Wednesday
+
+					<BR>
+
+					<input type="radio" name="update" value="Thursday"> Thursday
+
+					<input type="radio" name="update" value="Friday"> Friday
+
+					<input type="radio" name="update" value="Saturday"> Saturday
+
+					<BR>
+
+					<input type="radio" name="update" value="Saturday"> Sunday
+
+					<BR><BR>
+
+					Exercise:
+
+					<input onclick="clearText(this)" placeholder="Enter Exercise" type="text" name="Exercise" id="Ex">
+
+					<BR><BR>
+
+					MuscleId:
+
+					<input onclick="clearText(this)" placeholder="Enter MuscleId" type="text" name="MuscleId" id="MID">
+
+					<BR><BR>
+
+					<input type="submit" name="Submit" id="SubmitAdd">
+
+				</form>
+				
+			</div>
+
+			<div>
+
+				<!-- Edit Button -->
+
+				<button onclick="EditExercise()" class="EditPlan"> Edit Existing Exercise </button>
+
+				<!-- Edit an Existing Record -->
+
+				<form id="EditForm" style="display: none;z-index:1" action="localhost:8080" method="Post"
+					onsubmit="return checkValues2()">
+
+					<BR>
+
+					<B><U><I> Edit Exercise </I></U></B>
+					
+					<input type="button" name="close" value="x" onclick="CloseMenu()" style="position:absolute;top:10px;left:235px;border-radius:25px">
+
+					<BR><BR>
+
+					Exercise:
+
+					<input onclick="clearText(this)" placeholder="Enter Exercise" type="text" name="Exercise" id="Ex1">
+
+					<BR><BR>
+
+					MuscleId:
+
+					<input onclick="clearText(this)" placeholder="Enter MuscleId" type="text" name="MuscleId" id="MID1">
+
+					<BR><BR>
+
+					<input type="submit" name="Submit" id="SubmitEdit">
+
+				</form>
+
+			</div>
+
+			<div>
+
+				<!-- Delete Button -->
+
+				<button onclick="DeleteExercise()" class="DeletePlan"> Delete Exercise </button>
+
+				<!-- Delete an Existing Record -->
+
+				<form id="DeleteForm" style="display: none;z-index:1;" action="localhost:8080" method="Post"
+					onsubmit="return checkValues3()">
+
+					<BR>
+
+					<B><U><I> Delete Exercise </I></U></B>
+					
+					<input type="button" name="close" value="x" onclick="CloseMenu()" style="position:absolute;top:10px;left:235px;border-radius:25px;">
+
+					<BR><BR>
+
+					ExerciseId:
+
+					<input onclick="clearText(this)" type="text" name="ExerciseId" id="ExID"
+						placeholder="Enter ExerciseId">
+
+					<BR><BR>
+
+					<input type="submit" name="Submit" id="SubmitDelete">
+
+				</form>
+
+			</div>
+
+			
+
+
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<div id="Monday" class="gym-day"> 
+							Mondays Plan
+						</div>
+					</div>
+					<div class="col">
+						<div id="Tuesday" class="gym-day">
+							Tuesdays Plan
+						</div>
+					</div>
+					<div class="col">
+						<div id="Wednesday" class="gym-day">
+
+							Wednesdays Plan
+						</div>
+					</div>
+					<div class="col">
+						<div id="Thursday" class="gym-day">
+							Thursdays Plan
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col">
+						<div id="Friday" class="gym-day">
+							Fridays Plan
+						</div>
+					</div>
+					<div class="col">
+						<div id="Saturday" class="gym-day">
+							Saturdays Plan
+						</div>
+					</div>
+					<div class="col">
+						<div id="Sunday" class="gym-day">
+							Sundays Plan
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+
+
+			<!-- Arm Following Cursor -->
+
+			<!-- <Script>
+	function doSomething(){
+		var X=window.event.clientX+5;
+		var Y=window.event.clientY+20;
+		var Ref1=window.document.getElementById("Arm");
+		Ref1.style.top=Y;
+		Ref1.style.left=X;
+		}
+</Script>
+
+<Body onmousemove="doSomething()">
+	<span style="position:absolute;top:0;left:0" id="Arm">
+		<img SRC="arm2.jpg" Width="40px" Height="40px">
+		</img>
+	</span> -->
+
+</body>
+
+
+
+</HTML>
