@@ -1,5 +1,8 @@
 
-
+.viewport {
+    width: device-width ;
+    zoom: 1.0 ;
+  }
 
 .col{
     margin-bottom: 175px
