@@ -8,7 +8,7 @@
 .container{
     position: relative; 
     top: 100px;
-    z-index:-1;
+
 }
 
 .gym-day{
@@ -59,6 +59,7 @@
     top: 110px;
     left: 420px;
     border-radius:25px
+  
 }
 
 .DeletePlan:hover {
@@ -114,3 +115,77 @@
     color: white;
 }
 
+.daytable {
+    background-color: grey;
+    color: white;
+    border: 2px solid #A22F16;
+}
+
+.tableDel {
+    background-color: grey;
+    color: white;
+    border: 2px solid #A22F16;
+    border-radius:25px
+}
+.tableDel:hover {
+    background-color: #C82300;
+    color: white;
+    border: 2px solid #A22F16;
+    border-radius:25px
+}
+
+.tableUpd {
+    background-color: grey;
+    color: white;
+    border: 2px solid #A22F16;
+    border-radius:25px
+}
+.tableUpd:hover {
+    background-color: #C82300;
+    color: white;
+    border: 2px solid #A22F16;
+    border-radius:25px
+}
+
+.HeaderCenter{
+    text-align: center;
+    size: 50;
+}
+
+.Form{
+    z-index: 10;
+    text-align: center;
+    position:absolute;
+    top:10px;
+    left:235px;
+    border-radius:25px;
+}
+
+.gym-day{
+    text-align: center; 
+}
+
+
+#allexercises tr:nth-child(even){background-color: rgb(177, 175, 175);}
+#allexercises tr:hover {background-color: #A22F16; }
+
+#montable tr:nth-child(even){background-color: rgb(177, 175, 175);}
+#montable tr:hover {background-color: #A22F16; }
+
+#tuetable tr:nth-child(even){background-color: rgb(177, 175, 175);}
+#tuetable tr:hover {background-color: #A22F16; }
+
+#wedtable tr:nth-child(even){background-color: rgb(177, 175, 175);}
+#wedtable tr:hover {background-color: #A22F16; }
+
+#thutable tr:nth-child(even){background-color: rgb(177, 175, 175);}
+#thutable tr:hover {background-color: #A22F16; }
+
+#fritable tr:nth-child(even){background-color: rgb(177, 175, 175);}
+#fritable tr:hover {background-color: #A22F16; }
+
+#sattable tr:nth-child(even){background-color: rgb(177, 175, 175);}
+#sattable tr:hover {background-color: #A22F16; }
+
+#suntable tr:nth-child(even){background-color: rgb(177, 175, 175);}
+#suntable tr:hover {background-color: #A22F16; }
