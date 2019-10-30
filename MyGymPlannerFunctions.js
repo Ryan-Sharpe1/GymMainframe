@@ -91,7 +91,7 @@ function reload(){
 
 function getexistingrecs(){
 	const Http = new XMLHttpRequest();
-	const url="http://localhost:6464/exercise";
+	const url="http://"+location.host+":6464/exercise";
 	Http.open("GET", url);
 	Http.onreadystatechange = function(e){
 	   if (Http.readyState==4){
@@ -152,7 +152,7 @@ function getexistingrecs(){
 
 	function deleteData(id){
 		var Http=new XMLHttpRequest();
-		Http.open("DELETE", "http://localhost:6464/exercise/" + id);
+		Http.open("DELETE", "http://"+location.host+":6464/exercise/" + id);
 		Http.setRequestHeader("Content-Type", "application/json");
 
 		Http.onload=function(){
@@ -182,7 +182,7 @@ function postData(form){
 
 		var data = JSON.stringify(body);
 		var Http= new XMLHttpRequest();
-        Http.open("POST", 'http://localhost:6464/exercise');
+        Http.open("POST", 'http://' +location.host+':6464/exercise');
         Http.setRequestHeader("Content-Type", "application/json");
         Http.onload= function(){
             getexistingrecs();
@@ -202,12 +202,12 @@ function editData(){
 	if(checkValues2()){
 	if(document.getElementById("Update").value=="Exercise"){
         upD=document.getElementById("Ed").value;
-        url="http://localhost:6464/exerciseedit1/"+idUP+"/"+upD;
+        url="http://"+location.host+":6464/exerciseedit1/"+idUP+"/"+upD;
         
     }
     if(document.getElementById("Update").value=="Muscle Group"){
         upD=document.getElementById("Ed").value;
-        url="http://localhost:6464/exerciseedit2/"+idUP+"/"+upD;
+        url="http://"+location.host+":6464/exerciseedit2/"+idUP+"/"+upD;
         
     }
 	
