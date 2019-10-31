@@ -283,7 +283,6 @@ function filterTable(){
 					 maintable.innerHTML="";
 				data=JSON.parse(Http.responseText);
 				data.forEach(function(item){
-				   var weekday=document.getElementById(item.weekday+"Body");
 					var musclegroup=document.createElement("td");
 					var exercise=document.createElement("td");
 					var exerciseid=document.createElement("td");
