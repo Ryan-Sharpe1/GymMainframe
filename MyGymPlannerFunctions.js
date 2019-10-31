@@ -232,46 +232,46 @@ function editData(){
 
 function filterTable(){
 		var url ;
-			if(document.getElementById("DropD").value=="Chest"){
+			if(document.getElementsByName("Filter").value=="Chest"){
 				console.log("Chest");
 				url="http://"+location.host+":8082/exercise/filtermusclegroup/Chest";
 				}
 				
-			if(document.getElementById("DropD").value=="Biceps"){
+			if(document.getElementsByName("Filter").value=="Biceps"){
 				console.log("Biceps");
 				url="http://"+location.host+":8082/exercise/filtermusclegroup/Biceps";
 				}
 
-			if(document.getElementById("DropD").value=="Triceps"){
+			if(document.getElementsByName("Filter").value=="Triceps"){
 				console.log("Triceps");
 				url="http://"+location.host+":8082/exercise/filtermusclegroup/Triceps";
 				}
 
-			if (document.getElementById("DropD").value=="Shoulders"){
+			if (document.getElementsByName("Filter").value=="Shoulders"){
 				console.log("Shoulders");
 				url="http://"+location.host+":8082/exercise/filtermusclegroup/Shoulders";	
 				}
-			if (document.getElementById("DropD").value=="Back"){
+			if (document.getElementsByName("Filter").value=="Back"){
 				console.log("Back");
 				url="http://"+location.host+":8082/exercise/filtermusclegroup/Back";	
 				}
 
-			if (document.getElementById("DropD").value=="Cardio"){
+			if (document.getElementsByName("Filter").value=="Cardio"){
 				console.log("Cardio");
 				url="http://"+location.host+":8082/exercise/filtermusclegroup/Cardio";	
 				}
 
-			if (document.getElementById("DropD").value=="Core"){
+			if (document.getElementsByName("Filter").value=="Core"){
 				console.log("Core");
 				url="http://"+location.host+":8082/exercise/filtermusclegroup/Core";	
 				}
 
-			if (document.getElementById("DropD").value=="Legs"){
+			if (document.getElementsByName("Filter").value=="Legs"){
 				console.log("Legs");
 				url="http://"+location.host+":8082/exercise/filtermusclegroup/Legs";	
 				}
 
-			if (document.getElementById("DropD").value==""){
+			if (document.getElementsByName("Filter").value==""){
 				getexistingrecs();
 				}
 
