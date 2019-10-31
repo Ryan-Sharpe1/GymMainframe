@@ -234,41 +234,41 @@ function filterTable(){
 		var url ;
 			if(document.getElementById("DropD").value=="Chest"){
 				console.log("Chest");
-				url="http://"+location.host+":8082/exercise/filterChest";
+				url="http://"+location.host+":8082/exercise/filtermusclegroup/Chest";
 				}
 				
 			if(document.getElementById("DropD").value=="Bicep"){
 				console.log("Bicep");
-				url="http://"+location.host+":8082/exercise/filterBicep";
+				url="http://"+location.host+":8082/exercise/filtermusclegroup/Bicep";
 				}
 
 			if(document.getElementById("DropD").value=="Tricep"){
 				console.log("Tricep");
-				url="http://"+location.host+":8082/exercise/filterTricep";
+				url="http://"+location.host+":8082/exercise/filtermusclegroup/Tricep";
 				}
 
 			if (document.getElementById("DropD").value=="Shoulders"){
 				console.log("Shoulders");
-				url="http://"+location.host+":8082/exercise/filterShoulders";	
+				url="http://"+location.host+":8082/exercise/filtermusclegroup/Shoulders";	
 				}
 			if (document.getElementById("DropD").value=="Back"){
 				console.log("Back");
-				url="http://"+location.host+":8082/exercise/filterBack";	
+				url="http://"+location.host+":8082/exercise/filtermusclegroup/Back";	
 				}
 
 			if (document.getElementById("DropD").value=="Cardio"){
 				console.log("Cardio");
-				url="http://"+location.host+":8082/exercise/filterCardio";	
+				url="http://"+location.host+":8082/exercise/filtermusclegroup/Cardio";	
 				}
 
 			if (document.getElementById("DropD").value=="Core"){
 				console.log("Core");
-				url="http://"+location.host+":8082/exercise/filterCore";	
+				url="http://"+location.host+":8082/exercise/filtermusclegroup/Core";	
 				}
 
 			if (document.getElementById("DropD").value=="Legs"){
 				console.log("Legs");
-				url="http://"+location.host+":8082/exercise/filterLegs";	
+				url="http://"+location.host+":8082/exercise/filtermusclegroup/Legs";	
 				}
 
 			if (document.getElementById("DropD").value==""){
