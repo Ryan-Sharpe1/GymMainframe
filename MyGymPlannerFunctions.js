@@ -281,7 +281,7 @@ function filterTable(){
 				if (Http.readyState==4){
 					var maintable = document.getElementById("AllExBody");
 					 maintable.innerHTML="";
-			//	data=JSON.parse(Http.responseText);
+				data=JSON.parse(Http.responseText);
 				data.forEach(function(item){
 					var musclegroup=document.createElement("td");
 					var exercise=document.createElement("td");
@@ -323,6 +323,6 @@ function filterTable(){
 			}
 			}
 			Http.send();
-	//		return false
+			return false
 			}
 	

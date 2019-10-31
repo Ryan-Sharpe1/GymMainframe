@@ -45,7 +45,7 @@
 	</h1>
 
 	<!-- Filter Dropdown Menu and Button -->
-
+	<form onsubmit="return filterTable()">
 	<div id="DropD" style="position:absolute;top:130;left:1090">
 		<select name="Filter">
 			<option value="" selected></option>
@@ -59,8 +59,6 @@
 			<option value="Cardio">Cardio</option>
 		</select>
 	</div>
-
-	<form onsubmit="return filterTable()">
 		<input type="submit"  class="Filter"></input>
 	</form>
 
