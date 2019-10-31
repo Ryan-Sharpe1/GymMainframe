@@ -3,7 +3,7 @@
 <!-- Background Settings and Title -->
 
 <head>
-
+	
 	<meta name="viewport" class="viewport" content="width=device-width, initial-scale=1">
 
 	<style>
@@ -60,7 +60,9 @@
 		</select>
 	</div>
 
-	<button class="Filter"> Filter </button>
+	<form onsubmit="return FilterTable()">
+		<input type="submit" class="Filter"></input>
+	</form>
 
 
 	<!-- Shared Plans Button -->

@@ -150,7 +150,7 @@ function getexistingrecs(){
 
 			// Delete Function
 
-	function deleteData(id){
+function deleteData(id){
 		var Http=new XMLHttpRequest();
 		Http.open("DELETE", "http://"+location.host+":8082/exercise/" + id);
 		Http.setRequestHeader("Content-Type", "application/json");
@@ -162,6 +162,8 @@ function getexistingrecs(){
 		Http.send();
 		return false;
 	}
+
+			// Adding Data
 
 function postData(form){
     if (checkValues1()){
@@ -194,6 +196,8 @@ function postData(form){
         return false;
 	}
 
+			// Editing Data
+
 function editData(){
 
     var url ;
@@ -222,6 +226,104 @@ function editData(){
 	}
         return false;
 	
-}
+	}
 	
+			// Filters
+
+function filterTable(){
+		var url ;
+			if(document.getElementById("DropD").value=="Chest"){
+				console.log("Chest");
+				url="http://"+location.host+":8082/exercise/filterChest";
+				}
+				
+			if(document.getElementById("DropD").value=="Bicep"){
+				console.log("Bicep");
+				url="http://"+location.host+":8082/exercise/filterBicep";
+				}
+
+			if(document.getElementById("DropD").value=="Tricep"){
+				console.log("Tricep");
+				url="http://"+location.host+":8082/exercise/filterTricep";
+				}
+
+			if (document.getElementById("DropD").value=="Shoulders"){
+				console.log("Shoulders");
+				url="http://"+location.host+":8082/exercise/filterShoulders";	
+				}
+			if (document.getElementById("DropD").value=="Back"){
+				console.log("Back");
+				url="http://"+location.host+":8082/exercise/filterBack";	
+				}
+
+			if (document.getElementById("DropD").value=="Cardio"){
+				console.log("Cardio");
+				url="http://"+location.host+":8082/exercise/filterCardio";	
+				}
+
+			if (document.getElementById("DropD").value=="Core"){
+				console.log("Core");
+				url="http://"+location.host+":8082/exercise/filterCore";	
+				}
+
+			if (document.getElementById("DropD").value=="Legs"){
+				console.log("Legs");
+				url="http://"+location.host+":8082/exercise/filterLegs";	
+				}
+
+			if (document.getElementById("DropD").value==""){
+				getexistingrecs();
+				}
+
+			const Http = new XMLHttpRequest();
+			Http.open("GET", url);
+			Http.onreadystatechange = function(e){
+				if (Http.readyState==4){
+					var maintable = document.getElementById("AllExBody");
+					 maintable.innerHTML="";
+				data=JSON.parse(Http.responseText);
+				data.forEach(function(item){
+				   var weekday=document.getElementById(item.weekday+"Body");
+					var musclegroup=document.createElement("td");
+					var exercise=document.createElement("td");
+					var exerciseid=document.createElement("td");
+					var buttonDel = document.createElement("td");
+					var buttonUpd = document.createElement("td");
+					musclegroup.innerHTML=item.musclegroup;
+					exercise.innerHTML=item.exercise;
+					exerciseid.innerHTML=item.exerciseid;
+		 
+					let button = document.createElement("button");
+					button.innerHTML= "X";
+					button.type="button";
+					button.className = "btn tableDel";
+					button.addEventListener("click", function() {
+						deleteData(item.exerciseid);
+					});
+					buttonDel.appendChild(button);
+		 
+					let buttonU = document.createElement("button");
+					buttonU.innerHTML= "Edit";
+					buttonU.type="button";
+					buttonU.className = "btn tableUpd";
+					buttonU.addEventListener("click", function() {
+						EditExercise();
+						idUP = item.exerciseid;
+					});
+					buttonUpd.appendChild(buttonU);
+				   
+					let mainRow=document.createElement("tr");
+					
+					mainRow.appendChild(musclegroup);
+					 mainRow.appendChild(exercise);
+					mainRow.appendChild(exerciseid);
+					 mainRow.appendChild(buttonDel);
+					 mainRow.appendChild(buttonUpd);
+					maintable.appendChild(mainRow);
+			   });
+			}
+			}
+			Http.send();
+			return false
+			}
 	
