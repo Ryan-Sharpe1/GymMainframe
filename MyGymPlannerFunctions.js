@@ -237,14 +237,14 @@ function filterTable(){
 				url="http://"+location.host+":8082/exercise/filtermusclegroup/Chest";
 				}
 				
-			if(document.getElementById("DropD").value=="Bicep"){
-				console.log("Bicep");
-				url="http://"+location.host+":8082/exercise/filtermusclegroup/Bicep";
+			if(document.getElementById("DropD").value=="Biceps"){
+				console.log("Biceps");
+				url="http://"+location.host+":8082/exercise/filtermusclegroup/Biceps";
 				}
 
-			if(document.getElementById("DropD").value=="Tricep"){
-				console.log("Tricep");
-				url="http://"+location.host+":8082/exercise/filtermusclegroup/Tricep";
+			if(document.getElementById("DropD").value=="Triceps"){
+				console.log("Triceps");
+				url="http://"+location.host+":8082/exercise/filtermusclegroup/Triceps";
 				}
 
 			if (document.getElementById("DropD").value=="Shoulders"){
