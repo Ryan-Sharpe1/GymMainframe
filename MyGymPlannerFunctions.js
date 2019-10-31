@@ -281,7 +281,7 @@ function filterTable(){
 				if (Http.readyState==4){
 					var maintable = document.getElementById("AllExBody");
 					 maintable.innerHTML="";
-				data=JSON.parse(Http.responseText);
+			var	data=JSON.parse(Http.responseText);
 				data.forEach(function(item){
 					var musclegroup=document.createElement("td");
 					var exercise=document.createElement("td");
