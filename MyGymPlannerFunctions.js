@@ -233,6 +233,7 @@ function editData(){
 function filterTable(){
 		var url ;
 		alert("hello");
+		/*
 			if(document.getElementsByName("Filter").value=="Chest"){
 				console.log("Chest");
 				url="http://"+location.host+":8082/exercise/filtermusclegroup/Chest";
@@ -324,6 +325,7 @@ function filterTable(){
 			}
 			}
 			Http.send();
+			*/
 			return false
 			}
 	
