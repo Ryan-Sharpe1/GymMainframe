@@ -104,13 +104,22 @@
     color: white;
 }
 
+.DropD {
+    border: 2px solid grey;
+    border-radius:25px;
+    position:absolute;
+    top:130px;
+    left:1010px;
+}
+
 .Filter {
     background-color: grey;
+    border-radius:25px;
     color: white;
     border: 2px solid #A22F16;
     position: absolute;
-    top: 98px;
-    left: 1115;
+    top: 128px;
+    left: 1107px;
 }
 
 .Filter:hover {
@@ -152,7 +161,8 @@
 
 .HeaderCenter{
     text-align: center;
-    size: 50;
+    font-size: 70px;
+    font-family: fantasy;
 }
 
 .Form{

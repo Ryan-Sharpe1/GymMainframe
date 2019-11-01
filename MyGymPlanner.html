@@ -9,7 +9,6 @@
 	<style>
 		body {
 			background-image: url("GymBackground2.jpg");
-			
 			background-repeat: no-repeat;
 			background-attachment:fixed;
 		}
@@ -18,8 +17,9 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
+		<link rel="stylesheet" href="gym.css">
 
-	<link rel="stylesheet" href="gym.css">
+	
 
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
 		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -39,14 +39,16 @@
 <body>
 
 	<!-- <center> -->
-	<h1 class="HeaderCenter">
+		<div class="HeaderCenter">
+		
 		<B><U><I> My Gym Planner </I></U></B>
-	</h1>
+		
+		</div>
 
 	<!-- Filter Dropdown Menu and Button -->
 	<form onsubmit="return filterTable()">
-	<div id="DropD" style="position:absolute;top:130;left:1090">
-		<select id ="Filter" name="Filter">
+	<div id="DropD">
+		<select id ="Filter" class="DropD" name="Filter">
 			<option value="" selected></option>
 			<option value="Chest">Chest</option>
 			<option value="Biceps">Bicep</option>
@@ -58,7 +60,7 @@
 			<option value="Cardio">Cardio</option>
 		</select>
 	</div>
-		<input type="submit"  value ="Click" class="Filter"></input>
+		<input type="submit"  value ="Submit" class="Filter"></input>
 	</form>
 
 
