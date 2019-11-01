@@ -239,12 +239,12 @@ function filterTable(){
 				url="http://"+location.host+":8082/exercise/filtermusclegroup/Chest";
 				}
 				
-			if(document.getElementsByName("Filter").value=="Biceps"){
+			if(document.getElementsByName("Filter").value=="Bicep"){
 				console.log("Biceps");
 				url="http://"+location.host+":8082/exercise/filtermusclegroup/Biceps";
 				}
 
-			if(document.getElementsByName("Filter").value=="Triceps"){
+			if(document.getElementsByName("Filter").value=="Tricep"){
 				console.log("Triceps");
 				url="http://"+location.host+":8082/exercise/filtermusclegroup/Triceps";
 				}
