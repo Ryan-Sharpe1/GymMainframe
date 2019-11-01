@@ -233,53 +233,43 @@ function editData(){
 function filterTable(){
 		var url ;
 		
-		console.log("selected:" + document.getElementById("Filter").value);
 		url= "http://"+location.host+":8082/exercise/filtermusclegroup/"+document.getElementById("Filter").value;
-		console.log("1......"+url);
 
 			if(document.getElementsByName("Filter").value=="Chest"){
-				console.log("Chest");
 				url="http://"+location.host+":8082/exercise/filtermusclegroup/Chest";
 				}
 				
-			if(document.getElementsByName("Filter").value=="Biceps"){
-				console.log("Biceps");
-				url="http://"+location.host+":8082/exercise/filtermusclegroup/Biceps";
+			if(document.getElementsByName("Filter").value=="Bicep"){
+				url="http://"+location.host+":8082/exercise/filtermusclegroup/Bicep";
 				}
 
-			if(document.getElementsByName("Filter").value=="Triceps"){
-				console.log("Triceps");
-				url="http://"+location.host+":8082/exercise/filtermusclegroup/Triceps";
+			if(document.getElementsByName("Filter").value=="Tricep"){
+				url="http://"+location.host+":8082/exercise/filtermusclegroup/Tricep";
 				}
 
 			if (document.getElementsByName("Filter").value=="Shoulders"){
-				console.log("Shoulders");
 				url="http://"+location.host+":8082/exercise/filtermusclegroup/Shoulders";	
 				}
 			if (document.getElementsByName("Filter").value=="Back"){
-				console.log("Back");
 				url="http://"+location.host+":8082/exercise/filtermusclegroup/Back";	
 				}
 
 			if (document.getElementsByName("Filter").value=="Cardio"){
-				console.log("Cardio");
 				url="http://"+location.host+":8082/exercise/filtermusclegroup/Cardio";	
 				}
 
 			if (document.getElementsByName("Filter").value=="Core"){
-				console.log("Core");
 				url="http://"+location.host+":8082/exercise/filtermusclegroup/Core";	
 				}
 
 			if (document.getElementsByName("Filter").value=="Legs"){
-				console.log("Legs");
 				url="http://"+location.host+":8082/exercise/filtermusclegroup/Legs";	
 				}
 
 			if (document.getElementsByName("Filter").value==""){
 				getexistingrecs();
 				}
-			alert("2"+url);
+
 			const Http = new XMLHttpRequest();
 			Http.open("GET", url);
 			Http.onreadystatechange = function(e){
@@ -288,7 +278,6 @@ function filterTable(){
 					 maintable.innerHTML="";
 					var	data=JSON.parse(Http.responseText);
 					data.forEach(function(item){
-						alert(item.musclegroup);
 						var musclegroup=document.createElement("td");
 						var exercise=document.createElement("td");
 						var exerciseid=document.createElement("td");
