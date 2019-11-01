@@ -233,10 +233,10 @@ function editData(){
 function filterTable(){
 		var url ;
 		//alert("hello");
-		
-		alert("selected:" + document.getElementsById("Filter").value);
+		alert("testing");
+		console.log("selected:" + document.getElementsById("Filter").value);
 		url= "http://"+location.host+":8082/exercise/filtermusclegroup/"+document.getElementsById("Filter").value;
-		alert("1......"+url);
+		console.log("1......"+url);
 
 			if(document.getElementsByName("Filter").value=="Chest"){
 				console.log("Chest");
