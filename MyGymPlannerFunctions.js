@@ -232,10 +232,9 @@ function editData(){
 
 function filterTable(){
 		var url ;
-		//alert("hello");
-		alert("testing");
-		console.log("selected:" + document.getElementsById("Filter").value);
-		url= "http://"+location.host+":8082/exercise/filtermusclegroup/"+document.getElementsById("Filter").value;
+		
+		console.log("selected:" + document.getElementById("Filter").value);
+		url= "http://"+location.host+":8082/exercise/filtermusclegroup/"+document.getElementById("Filter").value;
 		console.log("1......"+url);
 
 			if(document.getElementsByName("Filter").value=="Chest"){
