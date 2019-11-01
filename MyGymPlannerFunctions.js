@@ -232,8 +232,8 @@ function editData(){
 
 function filterTable(){
 		var url ;
-		alert("hello");
-		/*
+		//alert("hello");
+		
 			if(document.getElementsByName("Filter").value=="Chest"){
 				console.log("Chest");
 				url="http://"+location.host+":8082/exercise/filtermusclegroup/Chest";
@@ -276,56 +276,57 @@ function filterTable(){
 			if (document.getElementsByName("Filter").value==""){
 				getexistingrecs();
 				}
-
+			alert(url);
 			const Http = new XMLHttpRequest();
 			Http.open("GET", url);
 			Http.onreadystatechange = function(e){
 				if (Http.readyState==4){
 					var maintable = document.getElementById("AllExBody");
 					 maintable.innerHTML="";
-			var	data=JSON.parse(Http.responseText);
-				data.forEach(function(item){
-					var musclegroup=document.createElement("td");
-					var exercise=document.createElement("td");
-					var exerciseid=document.createElement("td");
-					var buttonDel = document.createElement("td");
-					var buttonUpd = document.createElement("td");
-					musclegroup.innerHTML=item.musclegroup;
-					exercise.innerHTML=item.exercise;
-					exerciseid.innerHTML=item.exerciseid;
-		 
-					let button = document.createElement("button");
-					button.innerHTML= "X";
-					button.type="button";
-					button.className = "btn tableDel";
-					button.addEventListener("click", function() {
-						deleteData(item.exerciseid);
-					});
-					buttonDel.appendChild(button);
-		 
-					let buttonU = document.createElement("button");
-					buttonU.innerHTML= "Edit";
-					buttonU.type="button";
-					buttonU.className = "btn tableUpd";
-					buttonU.addEventListener("click", function() {
-						EditExercise();
-						idUP = item.exerciseid;
-					});
-					buttonUpd.appendChild(buttonU);
-				   
-					let mainRow=document.createElement("tr");
+					var	data=JSON.parse(Http.responseText);
+					data.forEach(function(item){
+						alert(item.musclegroup);
+						var musclegroup=document.createElement("td");
+						var exercise=document.createElement("td");
+						var exerciseid=document.createElement("td");
+						var buttonDel = document.createElement("td");
+						var buttonUpd = document.createElement("td");
+						musclegroup.innerHTML=item.musclegroup;
+						exercise.innerHTML=item.exercise;
+						exerciseid.innerHTML=item.exerciseid;
+			
+						let button = document.createElement("button");
+						button.innerHTML= "X";
+						button.type="button";
+						button.className = "btn tableDel";
+						button.addEventListener("click", function() {
+							deleteData(item.exerciseid);
+						});
+						buttonDel.appendChild(button);
+			
+						let buttonU = document.createElement("button");
+						buttonU.innerHTML= "Edit";
+						buttonU.type="button";
+						buttonU.className = "btn tableUpd";
+						buttonU.addEventListener("click", function() {
+							EditExercise();
+							idUP = item.exerciseid;
+						});
+						buttonUpd.appendChild(buttonU);
 					
-					mainRow.appendChild(musclegroup);
-					 mainRow.appendChild(exercise);
-					mainRow.appendChild(exerciseid);
-					 mainRow.appendChild(buttonDel);
-					 mainRow.appendChild(buttonUpd);
-					maintable.appendChild(mainRow);
-			   });
+						let mainRow=document.createElement("tr");
+						
+						mainRow.appendChild(musclegroup);
+						mainRow.appendChild(exercise);
+						mainRow.appendChild(exerciseid);
+						mainRow.appendChild(buttonDel);
+						mainRow.appendChild(buttonUpd);
+						maintable.appendChild(mainRow);
+			  		 });
 			}
 			}
 			Http.send();
-			*/
+		
 			return false
 			}
 	
