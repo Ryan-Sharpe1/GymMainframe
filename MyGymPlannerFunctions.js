@@ -234,17 +234,21 @@ function filterTable(){
 		var url ;
 		//alert("hello");
 		
+
+		url= "http://"+location.host+":8082/exercise/filtermusclegroup/"+document.getElementsByName("Filter").value;
+		alert("1"+url);
+
 			if(document.getElementsByName("Filter").value=="Chest"){
 				console.log("Chest");
 				url="http://"+location.host+":8082/exercise/filtermusclegroup/Chest";
 				}
 				
-			if(document.getElementsByName("Filter").value=="Bicep"){
+			if(document.getElementsByName("Filter").value=="Biceps"){
 				console.log("Biceps");
 				url="http://"+location.host+":8082/exercise/filtermusclegroup/Biceps";
 				}
 
-			if(document.getElementsByName("Filter").value=="Tricep"){
+			if(document.getElementsByName("Filter").value=="Triceps"){
 				console.log("Triceps");
 				url="http://"+location.host+":8082/exercise/filtermusclegroup/Triceps";
 				}
@@ -276,7 +280,7 @@ function filterTable(){
 			if (document.getElementsByName("Filter").value==""){
 				getexistingrecs();
 				}
-			alert(url);
+			alert("2"+url);
 			const Http = new XMLHttpRequest();
 			Http.open("GET", url);
 			Http.onreadystatechange = function(e){
