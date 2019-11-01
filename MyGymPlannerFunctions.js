@@ -235,7 +235,7 @@ function filterTable(){
 		//alert("hello");
 		
 
-		url= "http://"+location.host+":8082/exercise/filtermusclegroup/"+document.getElementsByName("Filter").value;
+		url= "http://"+location.host+":8082/exercise/filtermusclegroup/"+document.getElementsById("Filter").value;
 		alert("1"+url);
 
 			if(document.getElementsByName("Filter").value=="Chest"){
