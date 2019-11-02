@@ -5,8 +5,14 @@
 function AddExercise(){
 var Ref1=document.getElementById("Ex");
 var Ref2=document.getElementById("MID");
+var Ref3=document.getElementById("Sets");
+var Ref4=document.getElementById("Reps");
+var Ref5=document.getElementById("Weight");
 	Ref1.value="";
 	Ref2.value="";
+	Ref3.value="";
+	Ref4.value="";
+	Ref5.value="";
 var refadd= document.getElementById("AddForm");
 refadd.style.visibility="visible";
 var refedit= document.getElementById("EditForm");
