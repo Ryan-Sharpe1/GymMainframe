@@ -251,19 +251,19 @@ function editData(){
 	
 	if(document.getElementById("Update").value=="Sets"){
         upD=document.getElementById("Ed").value;
-        url="http://"+location.host+":8082/exerciseedit2/"+idUP+"/"+upD;
+        url="http://"+location.host+":8082/exerciseedit3/"+idUP+"/"+upD;
         
 	}
 	
 	if(document.getElementById("Update").value=="Reps"){
         upD=document.getElementById("Ed").value;
-        url="http://"+location.host+":8082/exerciseedit2/"+idUP+"/"+upD;
+        url="http://"+location.host+":8082/exerciseedit4/"+idUP+"/"+upD;
         
 	}
 	
 	if(document.getElementById("Update").value=="Weight"){
         upD=document.getElementById("Ed").value;
-        url="http://"+location.host+":8082/exerciseedit2/"+idUP+"/"+upD;
+        url="http://"+location.host+":8082/exerciseedit5/"+idUP+"/"+upD;
         
     }
 	
