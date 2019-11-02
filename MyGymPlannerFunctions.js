@@ -202,7 +202,7 @@ function postData(form){
         var body= {};
         for(var inputty of form){
             if(inputty.name){
-
+				
 				if(inputty.type=="radio"){
 					if(inputty.checked){
 						body [inputty.name]= inputty.value;
@@ -215,6 +215,7 @@ function postData(form){
 		}
 
 		var data = JSON.stringify(body);
+		alert(data);
 		var Http= new XMLHttpRequest();
         Http.open("POST", 'http://' +location.host+':8082/exercise');
         Http.setRequestHeader("Content-Type", "application/json");
