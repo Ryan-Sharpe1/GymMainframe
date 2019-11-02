@@ -41,12 +41,28 @@ function CloseMenu(){
 function checkValues1(){
 	var Ref1=document.getElementById("Ex");
 	var Ref2=document.getElementById("MID");
+	var Ref3=document.getElementById("Sets");
+	var Ref4=document.getElementById("Reps");
+	var Ref5=document.getElementById("Weight");
+
 	if(Ref1.value==""){
 		alert("Exercise is Missing");
 		return false;
 	}
 	if(Ref2.value==""){
 		alert("Muscle Group is Missing");
+		return false;
+	}
+	if(Ref3.value==""){
+		alert("Amount of Sets is Missing");
+		return false;
+	}
+	if(Ref4.value==""){
+		alert("Amount of Reps is Missing");
+		return false;
+	}
+	if(Ref4.value==""){
+		alert("Amount of Weight is Missing");
 		return false;
 	}
 	
@@ -101,13 +117,20 @@ function getexistingrecs(){
 	   data.forEach(function(item){
 		  var weekday=document.getElementById(item.weekday+"Body");
 		   var musclegroup=document.createElement("td");
-		   var exercise=document.createElement("td");
 		   var exerciseid=document.createElement("td");
+		   var exercise=document.createElement("td");
+		   var sets=document.createElement("td");
+		   var reps=document.createElement("td");
+		   var weight=document.createElement("td");
 		   var buttonDel = document.createElement("td");
 		   var buttonUpd = document.createElement("td");
 		   musclegroup.innerHTML=item.musclegroup;
-		   exercise.innerHTML=item.exercise;
 		   exerciseid.innerHTML=item.exerciseid;
+		   exercise.innerHTML=item.exercise;
+		   sets.innerHTML=item.sets;
+		   reps.innerHTML=item.reps;
+		   weight.innerHTML=item.weight;
+		   
 
 		   let button = document.createElement("button");
 		   button.innerHTML= "X";
@@ -131,8 +154,11 @@ function getexistingrecs(){
 		   let mainRow=document.createElement("tr");
 		   
 		   mainRow.appendChild(musclegroup);
+			mainRow.appendChild(exerciseid);
 			mainRow.appendChild(exercise);
-		   mainRow.appendChild(exerciseid);
+			mainRow.appendChild(sets);
+			mainRow.appendChild(reps);
+			mainRow.appendChild(weight);
 			mainRow.appendChild(buttonDel);
 			mainRow.appendChild(buttonUpd);
 		   maintable.appendChild(mainRow);
@@ -193,7 +219,8 @@ function postData(form){
         
 		Http.send(data);
 	}
-        return false;
+		return false;
+		
 	}
 
 			// Editing Data
@@ -210,6 +237,24 @@ function editData(){
         
     }
     if(document.getElementById("Update").value=="Muscle Group"){
+        upD=document.getElementById("Ed").value;
+        url="http://"+location.host+":8082/exerciseedit2/"+idUP+"/"+upD;
+        
+	}
+	
+	if(document.getElementById("Update").value=="Sets"){
+        upD=document.getElementById("Ed").value;
+        url="http://"+location.host+":8082/exerciseedit2/"+idUP+"/"+upD;
+        
+	}
+	
+	if(document.getElementById("Update").value=="Reps"){
+        upD=document.getElementById("Ed").value;
+        url="http://"+location.host+":8082/exerciseedit2/"+idUP+"/"+upD;
+        
+	}
+	
+	if(document.getElementById("Update").value=="Weight"){
         upD=document.getElementById("Ed").value;
         url="http://"+location.host+":8082/exerciseedit2/"+idUP+"/"+upD;
         
@@ -279,13 +324,20 @@ function filterTable(){
 					var	data=JSON.parse(Http.responseText);
 					data.forEach(function(item){
 						var musclegroup=document.createElement("td");
-						var exercise=document.createElement("td");
 						var exerciseid=document.createElement("td");
+						var exercise=document.createElement("td");
+						var sets=document.createElement("td");
+						var reps=document.createElement("td");
+						var weight=document.createElement("td");
 						var buttonDel = document.createElement("td");
 						var buttonUpd = document.createElement("td");
 						musclegroup.innerHTML=item.musclegroup;
-						exercise.innerHTML=item.exercise;
 						exerciseid.innerHTML=item.exerciseid;
+						exercise.innerHTML=item.exercise;
+						sets.innerHTML=item.sets;
+						reps.innerHTML=item.reps;
+						weight.innerHTML=item.weight;
+
 			
 						let button = document.createElement("button");
 						button.innerHTML= "X";
@@ -309,8 +361,11 @@ function filterTable(){
 						let mainRow=document.createElement("tr");
 						
 						mainRow.appendChild(musclegroup);
-						mainRow.appendChild(exercise);
 						mainRow.appendChild(exerciseid);
+						mainRow.appendChild(exercise);
+						mainRow.appendChild(sets);
+						mainRow.appendChild(reps);
+						mainRow.appendChild(weight);
 						mainRow.appendChild(buttonDel);
 						mainRow.appendChild(buttonUpd);
 						maintable.appendChild(mainRow);
