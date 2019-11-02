@@ -11,7 +11,7 @@ var refadd= document.getElementById("AddForm");
 refadd.style.visibility="visible";
 var refedit= document.getElementById("EditForm");
 refedit.style.visibility="hidden";
-refadd.style="width:325px;height:315px;position:fixed;border-radius:25px;background-color:grey;border:2px solid #A22F16;top:50%;left:50%;margin-top: -100px;margin-left: -100px";
+refadd.style="width:325px;height:500px;position:fixed;border-radius:25px;background-color:grey;border:2px solid #A22F16;top:200px;left:575px;margin-top: -100px;margin-left: -100px";
 }
 
 		//Visibility of Edit Form
@@ -61,7 +61,7 @@ function checkValues1(){
 		alert("Amount of Reps is Missing");
 		return false;
 	}
-	if(Ref4.value==""){
+	if(Ref5.value==""){
 		alert("Amount of Weight is Missing");
 		return false;
 	}
