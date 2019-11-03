@@ -217,7 +217,7 @@ function postData(form){
 		var data = JSON.stringify(body);
 		alert(data);
 		var Http= new XMLHttpRequest();
-        Http.open("POST", 'http://' +location.hostname+':8082/exercise');
+        Http.open("POST", "http://"+location.hostname+":8082/exercise");
         Http.setRequestHeader("Content-Type", "application/json");
         Http.onload= function(){
             getexistingrecs();
