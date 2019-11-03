@@ -113,7 +113,7 @@ function reload(){
 
 function getexistingrecs(){
 	const Http = new XMLHttpRequest();
-	const url="http://"+location.host+":8082"+"/exercise";
+	const url="http://"+location.hostname+":8082"+"/exercise";
 	Http.open("GET", url);
 	Http.onreadystatechange = function(e){
 	   if (Http.readyState==4){
@@ -217,7 +217,7 @@ function postData(form){
 		var data = JSON.stringify(body);
 		alert(data);
 		var Http= new XMLHttpRequest();
-        Http.open("POST", 'http://' +location.host+':8082/exercise');
+        Http.open("POST", 'http://' +location.hostname+':8082/exercise');
         Http.setRequestHeader("Content-Type", "application/json");
         Http.onload= function(){
             getexistingrecs();
@@ -240,30 +240,30 @@ function editData(){
 	if(checkValues2()){
 	if(document.getElementById("Update").value=="Exercise"){
         upD=document.getElementById("Ed").value;
-        url="http://"+location.host+":8082/exerciseedit1/"+idUP+"/"+upD;
+        url="http://"+location.hostname+":8082/exerciseedit1/"+idUP+"/"+upD;
         
     }
     if(document.getElementById("Update").value=="Muscle Group"){
         upD=document.getElementById("Ed").value;
-        url="http://"+location.host+":8082/exerciseedit2/"+idUP+"/"+upD;
+        url="http://"+location.hostname+":8082/exerciseedit2/"+idUP+"/"+upD;
         
 	}
 	
 	if(document.getElementById("Update").value=="Sets"){
         upD=document.getElementById("Ed").value;
-        url="http://"+location.host+":8082/exerciseedit3/"+idUP+"/"+upD;
+        url="http://"+location.hostname+":8082/exerciseedit3/"+idUP+"/"+upD;
         
 	}
 	
 	if(document.getElementById("Update").value=="Reps"){
         upD=document.getElementById("Ed").value;
-        url="http://"+location.host+":8082/exerciseedit4/"+idUP+"/"+upD;
+        url="http://"+location.hostname+":8082/exerciseedit4/"+idUP+"/"+upD;
         
 	}
 	
 	if(document.getElementById("Update").value=="Weight"){
         upD=document.getElementById("Ed").value;
-        url="http://"+location.host+":8082/exerciseedit5/"+idUP+"/"+upD;
+        url="http://"+location.hostname+":8082/exerciseedit5/"+idUP+"/"+upD;
         
     }
 	
@@ -285,37 +285,37 @@ function editData(){
 function filterTable(){
 		var url ;
 		
-		url= "http://"+location.host+":8082/exercise/filtermusclegroup/"+document.getElementById("Filter").value;
+		url= "http://"+location.hostname+":8082/exercise/filtermusclegroup/"+document.getElementById("Filter").value;
 
 			if(document.getElementsByName("Filter").value=="Chest"){
-				url="http://"+location.host+":8082/exercise/filtermusclegroup/Chest";
+				url="http://"+location.hostname+":8082/exercise/filtermusclegroup/Chest";
 				}
 				
 			if(document.getElementsByName("Filter").value=="Bicep"){
-				url="http://"+location.host+":8082/exercise/filtermusclegroup/Bicep";
+				url="http://"+location.hostname+":8082/exercise/filtermusclegroup/Bicep";
 				}
 
 			if(document.getElementsByName("Filter").value=="Tricep"){
-				url="http://"+location.host+":8082/exercise/filtermusclegroup/Tricep";
+				url="http://"+location.hostname+":8082/exercise/filtermusclegroup/Tricep";
 				}
 
 			if (document.getElementsByName("Filter").value=="Shoulders"){
-				url="http://"+location.host+":8082/exercise/filtermusclegroup/Shoulders";	
+				url="http://"+location.hostname+":8082/exercise/filtermusclegroup/Shoulders";	
 				}
 			if (document.getElementsByName("Filter").value=="Back"){
-				url="http://"+location.host+":8082/exercise/filtermusclegroup/Back";	
+				url="http://"+location.hostname+":8082/exercise/filtermusclegroup/Back";	
 				}
 
 			if (document.getElementsByName("Filter").value=="Cardio"){
-				url="http://"+location.host+":8082/exercise/filtermusclegroup/Cardio";	
+				url="http://"+location.hostname+":8082/exercise/filtermusclegroup/Cardio";	
 				}
 
 			if (document.getElementsByName("Filter").value=="Core"){
-				url="http://"+location.host+":8082/exercise/filtermusclegroup/Core";	
+				url="http://"+location.hostname+":8082/exercise/filtermusclegroup/Core";	
 				}
 
 			if (document.getElementsByName("Filter").value=="Legs"){
-				url="http://"+location.host+":8082/exercise/filtermusclegroup/Legs";	
+				url="http://"+location.hostname+":8082/exercise/filtermusclegroup/Legs";	
 				}
 
 			if (document.getElementsByName("Filter").value==""){
