@@ -5,19 +5,19 @@
 function AddExercise(){
 var Ref1=document.getElementById("Ex");
 var Ref2=document.getElementById("MID");
-var Ref3=document.getElementById("Sets");
-var Ref4=document.getElementById("Reps");
-var Ref5=document.getElementById("Weight");
+// var Ref3=document.getElementById("Sets");
+// var Ref4=document.getElementById("Reps");
+// var Ref5=document.getElementById("Weight");
 	Ref1.value="";
 	Ref2.value="";
-	Ref3.value="";
-	Ref4.value="";
-	Ref5.value="";
+	// Ref3.value="";
+	// Ref4.value="";
+	// Ref5.value="";
 var refadd= document.getElementById("AddForm");
 refadd.style.visibility="visible";
 var refedit= document.getElementById("EditForm");
 refedit.style.visibility="hidden";
-refadd.style="width:325px;height:500px;position:fixed;border-radius:25px;background-color:grey;border:2px solid #A22F16;top:200px;left:575px;margin-top: -100px;margin-left: -100px";
+refadd.style="width:325px;height:350px;position:fixed;border-radius:25px;background-color:grey;border:2px solid #A22F16;top:200px;left:575px;margin-top: -100px;margin-left: -100px";
 }
 
 		//Visibility of Edit Form
@@ -47,9 +47,9 @@ function CloseMenu(){
 function checkValues1(){
 	var Ref1=document.getElementById("Ex");
 	var Ref2=document.getElementById("MID");
-	var Ref3=document.getElementById("Sets");
-	var Ref4=document.getElementById("Reps");
-	var Ref5=document.getElementById("Weight");
+	// var Ref3=document.getElementById("Sets");
+	// var Ref4=document.getElementById("Reps");
+	// var Ref5=document.getElementById("Weight");
 
 	if(Ref1.value==""){
 		alert("Exercise is Missing");
@@ -59,18 +59,18 @@ function checkValues1(){
 		alert("Muscle Group is Missing");
 		return false;
 	}
-	if(Ref3.value==""){
-		alert("Amount of Sets is Missing");
-		return false;
-	}
-	if(Ref4.value==""){
-		alert("Amount of Reps is Missing");
-		return false;
-	}
-	if(Ref5.value==""){
-		alert("Amount of Weight is Missing");
-		return false;
-	}
+	// if(Ref3.value==""){
+	// 	alert("Amount of Sets is Missing");
+	// 	return false;
+	// }
+	// if(Ref4.value==""){
+	// 	alert("Amount of Reps is Missing");
+	// 	return false;
+	// }
+	// if(Ref5.value==""){
+	// 	alert("Amount of Weight is Missing");
+	// 	return false;
+	// }
 	
 	var refadd= document.getElementById("AddForm");
 	refadd.style.visibility="hidden";
@@ -125,17 +125,17 @@ function getexistingrecs(){
 		   var musclegroup=document.createElement("td");
 		   var exerciseid=document.createElement("td");
 		   var exercise=document.createElement("td");
-		   var sets=document.createElement("td");
-		   var reps=document.createElement("td");
-		   var weight=document.createElement("td");
+		//    var sets=document.createElement("td");
+		//    var reps=document.createElement("td");
+		//    var weight=document.createElement("td");
 		   var buttonDel = document.createElement("td");
 		   var buttonUpd = document.createElement("td");
 		   musclegroup.innerHTML=item.musclegroup;
 		   exerciseid.innerHTML=item.exerciseid;
 		   exercise.innerHTML=item.exercise;
-		   sets.innerHTML=item.sets;
-		   reps.innerHTML=item.reps;
-		   weight.innerHTML=item.weight;
+		//    sets.innerHTML=item.sets;
+		//    reps.innerHTML=item.reps;
+		//    weight.innerHTML=item.weight;
 		   
 
 		   let button = document.createElement("button");
@@ -162,9 +162,9 @@ function getexistingrecs(){
 		   mainRow.appendChild(musclegroup);
 			mainRow.appendChild(exerciseid);
 			mainRow.appendChild(exercise);
-			mainRow.appendChild(sets);
-			mainRow.appendChild(reps);
-			mainRow.appendChild(weight);
+			// mainRow.appendChild(sets);
+			// mainRow.appendChild(reps);
+			// mainRow.appendChild(weight);
 			mainRow.appendChild(buttonDel);
 			mainRow.appendChild(buttonUpd);
 		   maintable.appendChild(mainRow);
@@ -215,7 +215,7 @@ function postData(form){
 		}
 
 		var data = JSON.stringify(body);
-		alert(data);
+		// alert(data);
 		var Http= new XMLHttpRequest();
         Http.open("POST", "http://"+location.hostname+":8082/exercise");
         Http.setRequestHeader("Content-Type", "application/json");
@@ -249,23 +249,23 @@ function editData(){
         
 	}
 	
-	if(document.getElementById("Update").value=="Sets"){
-        upD=document.getElementById("Ed").value;
-        url="http://"+location.hostname+":8082/exerciseedit3/"+idUP+"/"+upD;
+	// if(document.getElementById("Update").value=="Sets"){
+    //     upD=document.getElementById("Ed").value;
+    //     url="http://"+location.hostname+":8082/exerciseedit3/"+idUP+"/"+upD;
         
-	}
+	// }
 	
-	if(document.getElementById("Update").value=="Reps"){
-        upD=document.getElementById("Ed").value;
-        url="http://"+location.hostname+":8082/exerciseedit4/"+idUP+"/"+upD;
+	// if(document.getElementById("Update").value=="Reps"){
+    //     upD=document.getElementById("Ed").value;
+    //     url="http://"+location.hostname+":8082/exerciseedit4/"+idUP+"/"+upD;
         
-	}
+	// }
 	
-	if(document.getElementById("Update").value=="Weight"){
-        upD=document.getElementById("Ed").value;
-        url="http://"+location.hostname+":8082/exerciseedit5/"+idUP+"/"+upD;
+	// if(document.getElementById("Update").value=="Weight"){
+    //     upD=document.getElementById("Ed").value;
+    //     url="http://"+location.hostname+":8082/exerciseedit5/"+idUP+"/"+upD;
         
-    }
+    // }
 	
     var Http = new XMLHttpRequest();
         Http.open("PUT", url);
@@ -333,17 +333,17 @@ function filterTable(){
 						var musclegroup=document.createElement("td");
 						var exerciseid=document.createElement("td");
 						var exercise=document.createElement("td");
-						var sets=document.createElement("td");
-						var reps=document.createElement("td");
-						var weight=document.createElement("td");
+						// var sets=document.createElement("td");
+						// var reps=document.createElement("td");
+						// var weight=document.createElement("td");
 						var buttonDel = document.createElement("td");
 						var buttonUpd = document.createElement("td");
 						musclegroup.innerHTML=item.musclegroup;
 						exerciseid.innerHTML=item.exerciseid;
 						exercise.innerHTML=item.exercise;
-						sets.innerHTML=item.sets;
-						reps.innerHTML=item.reps;
-						weight.innerHTML=item.weight;
+						// sets.innerHTML=item.sets;
+						// reps.innerHTML=item.reps;
+						// weight.innerHTML=item.weight;
 
 			
 						let button = document.createElement("button");
@@ -370,9 +370,9 @@ function filterTable(){
 						mainRow.appendChild(musclegroup);
 						mainRow.appendChild(exerciseid);
 						mainRow.appendChild(exercise);
-						mainRow.appendChild(sets);
-						mainRow.appendChild(reps);
-						mainRow.appendChild(weight);
+						// mainRow.appendChild(sets);
+						// mainRow.appendChild(reps);
+						// mainRow.appendChild(weight);
 						mainRow.appendChild(buttonDel);
 						mainRow.appendChild(buttonUpd);
 						maintable.appendChild(mainRow);
